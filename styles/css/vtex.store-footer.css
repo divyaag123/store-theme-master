@@ -1,0 +1,24 @@
+.row--menu-row {
+  padding-right: 24px;
+}
+
+.row--menu-row .rowContainer {
+  align-items: flex-start;
+}
+
+.row--payment-methods {
+  padding-top: 16px;
+}
+.row--credits {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  
+}
+ 
+.row--credits .footer {
+  text-align: right;
+}
+
+

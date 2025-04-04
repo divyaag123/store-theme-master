@@ -1,0 +1,25 @@
+{
+  "store.custom#about-us": {
+    "path": "/about-us"
+  },
+  "store.custom#faq": {
+    "path": "/faq"
+  },
+  "store.custom#contact-us": {
+    "path": "/contact-us"
+  },
+  "store.custom#clothing-page": {
+  "path": "/apparel---accessories/clothing/"
+},
+"store.custom#accessories-page": {
+  "path": "/apparel---accessories/accessories/"
+},
+"store.custom#eyeglasses-page":{
+   "path": "/apparel---accessories/eyeglasses/"
+},
+"store.custom#homedecor-page":{
+  "path":"/home---decor/"
+}
+
+
+}

@@ -1,0 +1,279 @@
+/* Blocks can be defined both on the store/blocks.json file, and in any number of json
+ * files inside the store/blocks directory, with any arbitrary directory structure.
+ *
+ * Additionally, all blocks files can support comments, such as this one, if given the
+ * .jsonc file extension.
+ *
+ * The store/blocks.json file is intended for backwards compatibility, for miscellaneous
+ * blocks, or if the app is simple enough that it doesn't warrant splitting the file.
+ */
+{
+  "store.orderplaced": {
+    "blocks": ["order-placed"]
+  },
+
+  "store.account": {
+    "blocks": ["my-account"],
+    "parent": {
+      "challenge": "challenge.profile"
+    }
+  },
+
+  "store.login": {
+    "blocks": ["login-content#default"]
+  },
+
+  "login-content#default": {
+    "props": {
+      "isInitialScreenOptionOnly": false,
+      "defaultOption": 1,
+      "showPasswordVerificationIntoTooltip": true
+    }
+  },
+
+  "store.product-review-form": {
+    "blocks": ["product-review-form"]
+  },
+
+  "store.not-found#product": {
+    "blocks": ["rich-text#not-found"]
+  },
+
+  "store.not-found#search": {
+    "blocks": ["rich-text#not-found"]
+  },
+
+  "rich-text#not-found": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "**PAGE NOT FOUND**",
+      "font": "t-heading-1"
+    }
+  },
+  
+/*-----------------------------clothing page craetion---------------------------------*/  
+"store.custom#clothing-page": {
+      "blocks": [
+        "rich-text#shelf-title",
+        "flex-layout.row#shelf",
+        "list-context.product-list",
+        "rich-text#shelf-title2",
+        "flex-layout.row#shelf2"
+
+      ]
+    },
+   "rich-text#shelf-title": {
+    "props": {
+      "text": "## Trending Women Wear" ,
+      "blockClass": "shelfTitle"
+    }
+  },
+  "flex-layout.row#shelf": {
+    "children": ["list-context.product-list#demo1"]
+  },
+  "list-context.product-list#demo1": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#demo-products"],
+    "props": {
+      "category": "9",
+      "orderBy": "OrderByTopSaleDESC"
+    }
+  },
+  "slider-layout#demo-products": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 4,
+        "tablet": 3,
+        "phone": 1
+      },
+      "infinite": true,
+      "fullWidth": false,
+      "blockClass": "shelf"
+    }
+  }
+//==================================================================
+,
+"rich-text#shelf-title2": {
+  "props": {
+    "text": "## Trending Men Wear",
+    "blockClass": "shelfTitle"
+  }
+},
+"flex-layout.row#shelf2": {
+  "children": ["list-context.product-list#demo2"]
+},
+"list-context.product-list#demo2": {
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#demo-products2"],
+  "props": {
+    "category": "11",
+    "orderBy": "OrderByTopSaleDESC"
+  }
+},
+"slider-layout#demo-products2": {
+  "props": {
+    "itemsPerPage": {
+      "desktop": 4,
+      "tablet": 3,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+},
+// ========================== accessories =========================================
+
+
+//====================================women accessories================================
+"store.custom#accessories-page":{
+  "blocks": [
+    "rich-text#shelf-title3",
+    "flex-layout.row#shelf3",
+    "list-context.product-list"
+    //"rich-text#shelf-title3"
+   // "flex-layout.row#shelf3"
+
+  ]},
+"rich-text#shelf-title3": {
+  "props": {
+    "text": "## Trending Accessories",
+    "blockClass": "shelfTitle"
+  }
+},
+"flex-layout.row#shelf3": {
+  "children": ["list-context.product-list#demo3"]
+},
+"list-context.product-list#demo3": {
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#demo-products3"],
+  "props": {
+    "category": "28",
+    "orderBy": "OrderByTopSaleDESC"
+  }
+},
+"slider-layout#demo-products3": {
+  "props": {
+    "itemsPerPage": {
+      "desktop": 4,
+      "tablet": 3,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+}  ,
+//============================eyeglasses=====================================
+"store.custom#eyeglasses-page":{
+  "blocks": [
+  "rich-text#shelf-eyeglasses",
+    "flex-layout.row#eyeglasses",
+    "list-context.product-list"
+   //"rich-text#shelf-Meneyeglasses",
+    //"flex-layout.row#Meneyeglasses"
+   
+
+  ]},
+"rich-text#shelf-eyeglasses": {
+  "props": {
+    "text": "## Trending Eyeglasses",
+    "blockClass": "shelfTitle"
+  }
+},
+"flex-layout.row#eyeglasses": {
+  "children": ["list-context.product-list#eyeglassesproducts"]
+},
+"list-context.product-list#eyeglassesproducts": {
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#eyeglasses-products"],
+  "props": {
+    "category": "31",
+    "orderBy": "OrderByTopSaleDESC"
+  }
+},
+"slider-layout#eyeglasses-products": {
+  "props": {
+    "itemsPerPage": {
+      "desktop": 4,
+      "tablet": 3,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+}  ,
+/*
+//==========================================Men eyeglasses=====================
+"rich-text#shelf-Meneyeglasses": {
+  "props": {
+    "text": "## Trending Men Eyeglasses",
+    "blockClass": "shelfTitle"
+  }
+},
+"flex-layout.row#Meneyeglasses": {
+  "children": ["list-context.product-list#Meneyeglassesproducts"]
+},
+"list-context.product-list#Meneyeglassesproducts": {
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#Meneyeglasses-products"],
+  "props": {
+    "category": "33",
+    "orderBy": "OrderByTopSaleDESC"
+  }
+},
+"slider-layout#Meneyeglasses-products": {
+  "props": {
+    "itemsPerPage": {
+      "desktop": 4,
+      "tablet": 3,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+},*/
+//===========================home decor=======================================
+"store.custom#homedecor-page":{
+  "blocks": [
+  "rich-text#shelf-homedecor",
+    "flex-layout.row#homedecor",
+    "list-context.product-list"
+    //"rich-text#shelf-title3"
+   // "flex-layout.row#shelf3"
+
+  ]},
+"rich-text#shelf-homedecor": {
+  "props": {
+    "text": "## Home Decor",
+    "blockClass": "shelfTitle"
+  }
+},
+"flex-layout.row#homedecor": {
+  "children": ["list-context.product-list#homedecorproducts"]
+},
+"list-context.product-list#homedecorproducts": {
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#homedecor-products"],
+  "props": {
+    "category": "25",
+    "orderBy": "OrderByTopSaleDESC"
+  }
+},
+"slider-layout#homedecor-products": {
+  "props": {
+    "itemsPerPage": {
+      "desktop": 4,
+      "tablet": 3,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+} 
+
+}
